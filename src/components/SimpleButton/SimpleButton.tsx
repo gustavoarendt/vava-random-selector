@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './SimpleButton.module.scss';
 
 interface SimpleButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
@@ -22,7 +23,11 @@ export const SimpleButton = ({
   };
 
   return (
-    <button style={buttonStyle} onClick={onClick}>
+    <button
+      className={styles.SimpleButton}
+      style={buttonStyle}
+      onClick={onClick}
+    >
       {children}
     </button>
   );

@@ -1,7 +1,5 @@
 import React from 'react';
-import classNames from 'classnames';
 import { Radiant } from '../../models/Radiant';
-import { RadiantCard } from '../RadiantCard/RadiantCard';
 import randomchar from '../../assets/randomchar.png';
 import styles from './Sorting.module.scss';
 import { SimpleButton } from '../SimpleButton/SimpleButton';
@@ -29,9 +27,17 @@ export const Sorting = ({ sortingList }: SortingProps): JSX.Element => {
         Random
       </SimpleButton>
       {selectedItem ? (
-        <img className={styles.Sorting__Image} src={selectedItem.displayIcon} />
+        <img
+          className={styles.Sorting__Image}
+          src={selectedItem.displayIcon}
+          alt={selectedItem.displayName}
+        />
       ) : (
-        <img className={styles.Sorting__Image} src={randomchar} />
+        <img
+          className={styles.Sorting__Image}
+          src={randomchar}
+          alt={'Random character'}
+        />
       )}
     </div>
   );

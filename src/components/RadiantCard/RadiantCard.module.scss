@@ -11,6 +11,20 @@
     object-fit: contain;
   }
 
+  @media (max-width: 768px) {
+    > img {
+      height: 50px;
+      width: 50px;
+    }
+
+    &__Name {
+      font-family: 'Roboto', sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      margin: 10px 0;
+    }
+  }
+
   &__Disabled {
     box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
     opacity: 0.1;

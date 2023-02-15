@@ -81,7 +81,7 @@ export const HomePage = (): JSX.Element => {
         setRadiants(filteredResp);
         setSortingList(filteredResp);
       })
-      .catch((erro) => console.log(erro));
+      .catch((error) => console.log(error));
   }, []);
 
   React.useEffect(() => {
@@ -95,7 +95,7 @@ export const HomePage = (): JSX.Element => {
         filteredResp.pop();
         setMaps(filteredResp);
       })
-      .catch((erro) => console.log(erro));
+      .catch((error) => console.log(error));
   }, []);
 
   return (
@@ -150,12 +150,18 @@ export const HomePage = (): JSX.Element => {
           <div className={styles.HomePage__SelectedMap}>
             <div className={styles.HomePage__RecomendedAgents}>
               {recomendedAgents.map((agent) => (
-                <RadiantCard radiant={agent} key={agent.uuid} />
+                <RadiantCard
+                  radiant={agent}
+                  key={`recomendation-${agent.uuid}`}
+                />
               ))}
             </div>
             <h2>{selectedMap.displayName}</h2>
-            <img src={selectedMap.listViewIcon} alt="Mapa Foto" />
-            <img src={selectedMap.displayIcon} alt="Mapa selecionado" />
+            <img src={selectedMap.listViewIcon} alt="Map splash art" />
+            <img
+              src={selectedMap.displayIcon}
+              alt="selected map detailed view"
+            />
           </div>
         )}
       </section>

@@ -43,11 +43,12 @@ export const HomePage = (): JSX.Element => {
   };
 
   const handleSortingMaps = (map: Map) => {
-    setRecomendedAgents(
-      radiants.filter((agent) =>
+    const recomendedPerMapsSorted = radiants
+      .filter((agent) =>
         COMPOSITION_MAPS[map.displayName].includes(agent.displayName)
       )
-    );
+      .sort((a, b) => 0.5 - Math.random());
+    setRecomendedAgents(recomendedPerMapsSorted);
   };
 
   const handleMapSelection = (map: Map) => {
